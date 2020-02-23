@@ -1,0 +1,173 @@
+.faq-main {
+  @include flexCenter(column);
+  width: 100vw;
+
+  h3 {
+    color: $h3Color;
+  }
+
+  article {
+    @include flexCenter(column);
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    margin: 5% 0%;
+    padding: 10% 0%;
+    width: 90%;
+    background-color: $primaryColor;
+    @include shadow();
+    @include transition(1.3s);
+
+    p,
+    h3 {
+      width: 80%;
+      margin: 0%;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .textDiv {
+    @include flexCenter(column);
+    width: 90%;
+    align-items: center;
+
+    p,
+    h3 {
+      width: 80%;
+      margin: 0%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    width: 100%;
+  }
+
+  li::before {
+    content: "\2022";
+    color: $h3Color;
+    width: 1em;
+    display: inline-block;
+    margin-left: -1em;
+  }
+
+  li {
+    @include flexCenter(row);
+    align-items: center;
+  }
+
+  li p {
+    margin: 1%;
+    font-weight: bold;
+  }
+
+  .faq-main__bored-article {
+    padding-bottom: 0%;
+
+    p {
+      margin-bottom: 5%;
+    }
+  }
+
+  .faq-main__traveltime-article--planet-div {
+    @include flexCenter(row);
+    margin-bottom: 5%;
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 10%;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .faq-main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    article {
+      height: 100%;
+      width: 100%;
+      padding: 0%;
+      margin: 0%;
+
+      h3 {
+        margin-bottom: 2%;
+      }
+    }
+
+    .textDiv {
+      h3 {
+        margin-bottom: 2%;
+      }
+    }
+
+    .faq-main__side-article {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      width: 100%;
+
+      .textDiv {
+        width: 90%;
+        padding: 10% 0%;
+      }
+    }
+
+    .faq-main__risky-article {
+      .textDiv {
+        width: 100%;
+      }
+    }
+
+    .faq-main__bored-article {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      width: 100%;
+      @include flexCenter(row);
+
+      img {
+        width: 50%;
+        height: 100%;
+      }
+    }
+
+    .faq-main__traveltime-article {
+      grid-column: 1/3;
+      @include flexCenter(row);
+      justify-content: space-between;
+    }
+
+    .faq-main__traveltime-article--planet-div {
+      width: 32%;
+      height: 100%;
+      background-image: radial-gradient(
+        circle at 50% 39%,
+        #072142,
+        #00132c 101%
+      );
+      z-index: 0;
+      @include flexCenter(column);
+      justify-content: space-around;
+      align-items: center;
+      margin: 0%;
+    }
+    .faq-main__traveltime-article--planet-div img {
+      z-index: 100;
+      width: 30px;
+      height: 30px;
+    }
+
+    .textDiv {
+      width: 68%;
+    }
+  }
+
+  .footer__no-margin {
+    margin: 0%;
+  }
+}

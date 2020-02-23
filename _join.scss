@@ -1,0 +1,119 @@
+.join-page__h3 {
+  @include flexCenter(column);
+  align-items: center;
+
+  h2 {
+    color: $h3Color;
+    width: 30%;
+    margin: 5% 0 0 0;
+    font-size: 28px;
+  }
+
+  p {
+    text-align: center;
+    color: $footerColor;
+    width: 50%;
+    font-size: 20px;
+    margin-bottom: 5%;
+  }
+}
+
+form {
+  @include flexCenter(column);
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  color: $footerColor;
+  background-color: $primaryColor;
+  @include shadow();
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-top: 3%;
+  }
+
+  input {
+    margin: 1% 0% 2% 0%;
+    border: solid 1px $footerColor;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 22px;
+    background-color: $primaryColor;
+    padding: 1%;
+  }
+
+  .form__input-label {
+    @include flexCenter(column);
+    width: 45%;
+  }
+
+  textarea {
+    border: solid 1px $footerColor;
+    border-radius: 5px;
+  }
+
+  .form__input-label--textarea {
+    @include flexCenter(column);
+    width: 100%;
+  }
+
+  .form__submit-button {
+    @include flexCenter(row);
+    width: 100%;
+  }
+  button {
+    margin-top: 2%;
+    padding: 1% 3%;
+    border: solid 1px $footerColor;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    color: $footerColor;
+    @include transition(0.3s);
+    @include flexCenter(row);
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    a {
+      text-decoration: none;
+      color: $navColor;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .join-page__h3 {
+    h2,
+    p {
+      width: 30%;
+    }
+  }
+
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    width: 80%;
+    margin: 0% 5%;
+
+    .form__input-label {
+      width: 30%;
+      margin: 1.5%;
+    }
+
+    .form__input-label--textarea {
+      @include flexCenter(column);
+      padding: 0% 1.5%;
+    }
+    textarea {
+      width: 100%;
+    }
+
+    button {
+      width: 10%;
+    }
+  }
+}
